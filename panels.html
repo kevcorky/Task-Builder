@@ -1,0 +1,2438 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <!--  http://www.w3schools.com/jsref/event_ondrop.asp  -->
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <link href="http://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+
+    <script>
+        var new_id = 20;
+
+        $( ".base" ).on("drop", function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            this.remove();
+        });
+
+        $(function() {
+            $("#list_2").sortable({
+                placeholder: "ui-sortable-placeholder"
+            });
+            $("#list_1").sortable({
+                placeholder: "ui-sortable-placeholder"
+            });
+            $(".tabContent").sortable({
+                placeholder: "ui-sortable-placeholder",
+                tolerance: "intersect"
+            });
+
+            $(function() {
+                $( ".slideStuff" ).slider();
+            });
+
+
+
+            /*$(document).ready(function() {
+                $("#tabs").tabs();
+
+                $("button#tabButton").click(function() {
+
+                    var num_tabs = $("div#tabs ul li").length + 1;
+
+                    $("div#tabs ul").append(
+                        "<li><a href='#tab" + num_tabs + "'>" + "Tab " + num_tabs + "</a></li>"
+                    );
+                    $("div#tabs").append(
+                        "<div id='tab" + num_tabs + "' style='width:98%; height:95%'></div>"
+                    );
+                    $("div#tabs").tabs("refresh");
+                });
+            });*/
+        });
+    </script>
+</head>
+
+<script>
+    var checkCount = 1;
+    var radioCount = 1;
+    var textCount = 1;
+    var dropCount = 1;
+    var dateCount = 1;
+    var slideCount = 1;
+    var numCount = 1;
+    var colorCount = 1;
+    var tabCount = 2;
+    var fieldCount = 1;
+    var roleCount = 1;
+    var dataCount = 1;
+
+    function addCheck() {
+        checkCount++;
+    }
+    function getCheck() {
+        return(checkCount);
+    }
+
+    function addRadio() {
+        radioCount++;
+    }
+    function getRadio() {
+        return(radioCount);
+    }
+
+    function addText() {
+        textCount++;
+    }
+    function getText() {
+        return(textCount);
+    }
+
+    function addDrop() {
+        dropCount++;
+    }
+    function getDrop() {
+        return(dropCount);
+    }
+
+    function addDate() {
+        dateCount++;
+    }
+    function getDate() {
+        return(dateCount);
+    }
+
+    function addSlide() {
+        slideCount++;
+    }
+    function getSlide() {
+        return(slideCount);
+    }
+
+    function addNum() {
+        numCount++;
+    }
+    function getNum() {
+        return(numCount);
+    }
+
+    function addColor() {
+        colorCount++;
+    }
+    function getColor() {
+        return(colorCount);
+    }
+
+    function addTab() {
+        tabCount++;
+    }
+    function getTab() {
+        return(tabCount);
+    }
+
+    function addField() {
+        fieldCount++;
+    }
+    function getField() {
+        return(fieldCount);
+    }
+
+    function addRole() {
+        roleCount++;
+    }
+    function getRole() {
+        return(roleCount);
+    }
+
+    function addData() {
+        dataCount++;
+    }
+    function getData() {
+        return(dataCount);
+    }
+</script>
+
+<body>
+    <div id="dialog" title="Tab title">
+      <form>
+        <fieldset class="ui-helper-reset">
+          <label for="tab_title">Title</label>
+          <input type="text" name="tab_title" id="tab_title" value="" class="ui-widget-content ui-corner-all" />
+        </fieldset>
+      </form>
+    </div>
+
+    <div id="dialog_2" title="Group title">
+      <form>
+        <fieldset class="ui-helper-reset">
+          <label for="group_title">Title</label>
+          <input type="text" name="group_title" id="group_title" value="" class="ui-widget-content ui-corner-all" />
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="headText">
+        <ul id="titleStuff" style="list-style-type:none">
+            <li class="titles"><input type=text id="nameTitle" class="outTextBox" placeholder="Name"></text><span id="imp"> *</span></li>
+            <li class="titles"><textarea id="procTitle" class="outTextBox" placeholder="Procedures"></textarea></li>
+            <li class="titles"><textarea id="descTitle" class="outTextBox" placeholder="Description"></textarea></li>
+        </ul>
+    </div>
+
+    <div class="panels">
+        <div id="panel_1">
+            <h2>WIDGET LIBRARY</h2>
+            <ul id="list_1" style="list-style-type:none">
+                <li class="ui-state-default"><button type="button" class="mainButtons" id="check" onclick="checkbox()"><span>Checkbox</span></button></li>
+                <li class="ui-state-default"><button type="button" class="mainButtons" id="radio" onclick="radio()"><span>Radio button</span></button></li>
+                <li class="ui-state-default"><button type="button" class="mainButtons" id="text" onclick="text()"><span>Textbox</span></button></li>
+                <li class="ui-state-default"><button type="button" class="mainButtons" id="drop" onclick="dropdown()"><span>Dropdown</span></button></li>
+                <li class="ui-state-default"><button type="button" class="mainButtons" id="dateButton" onclick="dateButt()"><span>Date Picker</span></button></li>
+                <li class="ui-state-default"><button type="button" class="mainButtons" id="slideButton" onclick="slider()"><span>Slider</span></button></li>
+                <li class="ui-state-default"><button type="button" class="mainButtons" id="numButton" onclick="numbers()"><span>Numstepper</span></button></li>
+                <li class="ui-state-default"><button type="button" class="mainButtons" id="colorButton" onclick="color()"><span>Color Picker</span></button></li>
+                <li class="ui-state-default"><button type="button" class="mainButtons" id="dataButton" onclick="dataSource()"><span>DataSource</span></button></li>
+                <li class="ui-state-default"><button type="button" class="mainButtons" id="roleButton" onclick="role()"><span>Role</span></button></li>
+                <li class="ui-state-default" id="groupButt"><button type="button" class="mainButtons" id="add_group"><span>New Group</span></button></li>
+            </ul>
+            <button type="button" class="output" onclick="outputData()">GENERATE XML</button>
+        </div>
+
+        <div id="tabs">
+            <ul id="tab-Title">
+                <li class="tabEdit"><input class="txtTab" type="text"/><a href="#tabs-1" class="tabHeader">Start</a></li>
+                <li class="tabEdit" style="float: right"><button type="button" id="add_tab"><span>+</span></button></li>
+            </ul>
+
+            <div id="tabs-1" style="width:98%; height:95%">
+                <ul id="tabs-1-cont" class="tabContent" style="list-style-type:none">
+                </ul>
+            </div>
+
+        </div>
+
+        <div id="panel_3"><h2>PROPERTIES</h2>
+            <ul id="list_3" style="list-style-type:none">
+            </ul>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">x</span>
+            <textarea id="modalContent" readonly></textarea>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+
+    <script>
+        function checkbox() {
+            var node = document.createElement("LI");
+            node.setAttribute('class', 'base');
+
+            var x = document.createElement("INPUT");
+            x.setAttribute("type", "checkbox");
+            x.setAttribute('class', 'check');
+            //x.setAttribute('value', "");
+            x.setAttribute('name', "");
+            var checkName = "checkbx " + String(getCheck());
+            addCheck();
+            x.setAttribute("id", checkName);
+
+            var y = document.createElement('button');
+            y.setAttribute('content', 'test content');
+            y.setAttribute('class', 'properties');
+            y.innerHTML = 'Edit';
+
+            var z = document.createElement('button');
+            z.setAttribute('class', 'delete');
+            z.innerHTML = 'x';
+
+            node.appendChild(x);
+            node.appendChild(y);
+            node.appendChild(z);
+
+            var tabID = String(getSelectedTabId());
+
+            var tabContID = document.getElementById(tabID).children[0].id;
+
+            document.getElementById(tabContID).appendChild(node);
+
+            var active = $("#tabs .ui-tabs-panel:visible").attr("id");
+
+            var test = document.getElementById(active).getElementsByClassName(fieldClass);
+
+            if(test.length > 0) {
+                remake();
+            }
+        }
+
+        function getSelectedTabId(){
+            return $("#tabs .ui-tabs-panel:visible").attr("id");
+        }
+
+        function radio() {
+            var node = document.createElement("LI");
+            node.setAttribute('class', 'base');
+
+            var x = document.createElement("INPUT");
+            x.setAttribute("type", "radio");
+            x.setAttribute('class', 'rad');
+            x.setAttribute("id", "rd");
+            var radioName = "radio " + String(getRadio());
+            addRadio();
+            x.setAttribute("id", radioName);
+
+            var y = document.createElement('button');
+            y.setAttribute('content', 'test content');
+            y.setAttribute('class', 'properties');
+            y.innerHTML = 'Edit';
+
+            var z = document.createElement('button');
+            z.setAttribute('class', 'delete');
+            z.innerHTML = 'x';
+
+            node.appendChild(x);
+            node.appendChild(y);
+            node.appendChild(z);
+
+            var tabID = String(getSelectedTabId());
+
+            var tabContID = document.getElementById(tabID).children[0].id;
+
+            document.getElementById(tabContID).appendChild(node);
+
+            var active = $("#tabs .ui-tabs-panel:visible").attr("id");
+
+            var test = document.getElementById(active).getElementsByClassName(fieldClass);
+
+            if(test.length > 0) {
+                remake();
+            }
+        }
+
+        function text() {
+            var node = document.createElement("LI");
+            node.setAttribute('class', 'base');
+
+            var x = document.createElement("INPUT");
+            x.setAttribute("type", "textarea");
+            x.setAttribute("id", "ta");
+            x.setAttribute('class', 'txt');
+            var textName = "textbx " + String(getText());
+            addText();
+            x.setAttribute("id", textName);
+
+            var y = document.createElement('button');
+            y.setAttribute('content', 'test content');
+            y.setAttribute('class', 'properties');
+            y.innerHTML = 'Edit';
+
+            var z = document.createElement('button');
+            z.setAttribute('class', 'delete');
+            z.innerHTML = 'x';
+
+            node.appendChild(x);
+            node.appendChild(y);
+            node.appendChild(z);
+
+            var tabID = String(getSelectedTabId());
+
+            var tabContID = document.getElementById(tabID).children[0].id;
+
+            document.getElementById(tabContID).appendChild(node);
+
+            var active = $("#tabs .ui-tabs-panel:visible").attr("id");
+
+            var test = document.getElementById(active).getElementsByClassName(fieldClass);
+
+            if(test.length > 0) {
+                remake();
+            }
+        }
+
+        function dropdown() {
+            var x = document.createElement('div');
+            var node = document.createElement("LI");
+            node.setAttribute('class', 'base');
+
+            var dropName = "drop " + String(getDrop());
+            addDrop();
+            x.setAttribute("id", dropName);
+            x.setAttribute('class', 'dropdown');
+
+            x.innerHTML = "<select name='' class='dropdown' id='" + String(dropName) + "'>"
+                + '<option>Bloop</option>'
+                +'<option>Bleep</option>'
+                +'<option>Blop</option>'
+                +'<option>Blup</option>'
+                +'<option>Blip</option>'
+            +'</select>';
+
+            //while(x.firstChild) {
+            //    document.getElementById("list_2").appendChild(x.firstChild);
+            //}
+            while(x.firstChild) {
+                node.appendChild(x.firstChild);
+            }
+
+            var y = document.createElement('button');
+            y.setAttribute('content', 'test content');
+            y.setAttribute('class', 'properties');
+            y.innerHTML = 'Edit';
+
+            var z = document.createElement('button');
+            z.setAttribute('content', 'test content');
+            z.setAttribute('class', 'delete');
+            z.innerHTML = 'x';
+
+            node.appendChild(y);
+            node.appendChild(z);
+
+            var tabID = String(getSelectedTabId());
+
+            var tabContID = document.getElementById(tabID).children[0].id;
+
+            document.getElementById(tabContID).appendChild(node);
+
+            var active = $("#tabs .ui-tabs-panel:visible").attr("id");
+
+            var test = document.getElementById(active).getElementsByClassName(fieldClass);
+
+            if(test.length > 0) {
+                remake();
+            }
+        }
+
+        function dateButt() {
+            var node = document.createElement("LI");
+            node.setAttribute('class', 'base');
+
+            var x = document.createElement("INPUT");
+            x.setAttribute("type", "text");
+            x.setAttribute('class', 'date');
+
+            x.addEventListener("click", function() {
+                $( this ).datepicker();
+                $( this ).datepicker("show");
+            });
+
+            var dateName = "date " + String(getDate());
+            addDate();
+            x.setAttribute('id', dateName);
+
+            var y = document.createElement('button');
+            y.setAttribute('content', 'test content');
+            y.setAttribute('class', 'properties');
+            y.innerHTML = 'Edit';
+
+            var z = document.createElement('button');
+            z.setAttribute('class', 'delete');
+            z.innerHTML = 'x';
+
+            node.appendChild(x);
+            node.appendChild(y);
+            node.appendChild(z);
+
+            var tabID = String(getSelectedTabId());
+
+            var tabContID = document.getElementById(tabID).children[0].id;
+
+            document.getElementById(tabContID).appendChild(node);
+
+            var active = $("#tabs .ui-tabs-panel:visible").attr("id");
+
+            var test = document.getElementById(active).getElementsByClassName(fieldClass);
+
+            if(test.length > 0) {
+                remake();
+            }
+        }
+
+        function slider() {
+            var node = document.createElement("LI");
+            node.setAttribute('class', 'base');
+
+            var x = document.createElement("DIV");
+            x.setAttribute('class', 'slideStuff');
+
+            var slideName = "slider_" + String(getSlide());
+            addSlide();
+            x.setAttribute('id', slideName);
+
+            var y = document.createElement('button');
+            y.setAttribute('content', 'test content');
+            y.setAttribute('class', 'properties');
+            y.innerHTML = 'Edit';
+
+            var z = document.createElement('button');
+            z.setAttribute('class', 'delete');
+            z.innerHTML = 'x';
+
+            node.appendChild(x);
+            node.appendChild(y);
+            node.appendChild(z);
+
+            var tabID = String(getSelectedTabId());
+
+            var tabContID = document.getElementById(tabID).children[0].id;
+
+            document.getElementById(tabContID).appendChild(node);
+
+            var active = $("#tabs .ui-tabs-panel:visible").attr("id");
+
+            var test = document.getElementById(active).getElementsByClassName(fieldClass);
+
+            if(test.length > 0) {
+                remake();
+            }
+
+            $(function() {
+                $( ".slideStuff" ).slider();
+            });
+        }
+
+        function numbers() {
+            var node = document.createElement("LI");
+            node.setAttribute('class', 'base');
+
+            var x = document.createElement("INPUT");
+            x.setAttribute('type', 'number');
+            x.setAttribute('min', '0');
+            x.setAttribute('max', '100');
+            x.setAttribute('class', 'numbah');
+
+            var slideName = "num " + String(getNum());
+            addNum();
+            x.setAttribute('id', slideName);
+
+            var y = document.createElement('button');
+            y.setAttribute('content', 'test content');
+            y.setAttribute('class', 'properties');
+            y.innerHTML = 'Edit';
+
+            var z = document.createElement('button');
+            z.setAttribute('class', 'delete');
+            z.innerHTML = 'x';
+
+            node.appendChild(x);
+            node.appendChild(y);
+            node.appendChild(z);
+
+            var tabID = String(getSelectedTabId());
+
+            var tabContID = document.getElementById(tabID).children[0].id;
+
+            document.getElementById(tabContID).appendChild(node);
+
+            var active = $("#tabs .ui-tabs-panel:visible").attr("id");
+
+            var test = document.getElementById(active).getElementsByClassName(fieldClass);
+
+            if(test.length > 0) {
+                remake();
+            }
+        }
+
+        function color() {
+            var node = document.createElement("LI");
+            node.setAttribute('class', 'base');
+
+            var x = document.createElement("INPUT");
+            x.setAttribute('type', 'color');
+            x.setAttribute('class', 'colors');
+
+            var colorName = "color " + String(getColor());
+            addColor();
+            x.setAttribute('id', colorName);
+
+            var y = document.createElement('button');
+            y.setAttribute('content', 'test content');
+            y.setAttribute('class', 'properties');
+            y.innerHTML = 'Edit';
+
+            var z = document.createElement('button');
+            z.setAttribute('class', 'delete');
+            z.innerHTML = 'x';
+
+            node.appendChild(x);
+            node.appendChild(y);
+            node.appendChild(z);
+
+            var tabID = String(getSelectedTabId());
+
+            var tabContID = document.getElementById(tabID).children[0].id;
+
+            document.getElementById(tabContID).appendChild(node);
+
+            var active = $("#tabs .ui-tabs-panel:visible").attr("id");
+
+            var test = document.getElementById(active).getElementsByClassName(fieldClass);
+
+            if(test.length > 0) {
+                remake();
+            }
+        }
+
+        function dataSource() {
+            var node = document.createElement("LI");
+            node.setAttribute('class', 'base');
+
+            var x = document.createElement("INPUT");
+            x.setAttribute("type", "textarea");
+            x.setAttribute('class', 'DS');
+            var dataName = "data_" + String(getData());
+            addData();
+            x.setAttribute("id", dataName);
+
+            var y = document.createElement('button');
+            y.setAttribute('content', 'test content');
+            y.setAttribute('class', 'properties');
+            y.innerHTML = 'Edit';
+
+            var z = document.createElement('button');
+            z.setAttribute('class', 'delete');
+            z.innerHTML = 'x';
+
+            node.appendChild(x);
+            node.appendChild(y);
+            node.appendChild(z);
+
+            var tabID = String(getSelectedTabId());
+
+            var tabContID = document.getElementById(tabID).children[0].id;
+
+            document.getElementById(tabContID).appendChild(node);
+
+            var active = $("#tabs .ui-tabs-panel:visible").attr("id");
+
+            var test = document.getElementById(active).getElementsByClassName(fieldClass);
+
+            if(test.length > 0) {
+                remake();
+            }
+        }
+
+        function role() {
+            var x = document.createElement('div');
+            var node = document.createElement("LI");
+            node.setAttribute('class', 'base');
+
+            var dsElem = document.createElement('INPUT');
+            dsElem.setAttribute('type', 'textarea');
+            dsElem.setAttribute('class', 'tiedElem');
+            var dsID = "dsTied_" + String(getRole());
+            dsElem.setAttribute('id', dsID);
+
+            var dsLabel = document.createElement('label');
+            dsLabel.htmlFor = dsID;
+            dsLabel.innerHTML = 'DataSource: ';
+
+            node.appendChild(dsLabel);
+            node.appendChild(dsElem);
+
+            var roleName = "role_" + String(getRole());
+            x.setAttribute("id", roleName);
+            x.setAttribute('class', 'roles');
+
+            var label = document.createElement('label');
+            label.htmlFor = roleName;
+            label.innerHTML = "Type: ";
+
+            x.innerHTML = "<select name='' style='margin-right: 5px; display: none' class='roles' id='" + String(roleName) + "'>"
+                + '<option>A</option>'
+                +'<option>N</option>'
+                +'<option>C</option>'
+            +'</select>';
+
+            //node.appendChild(label);
+
+            while(x.firstChild) {
+                node.appendChild(x.firstChild);
+            }
+
+            var min = document.createElement("INPUT");
+            min.setAttribute('type', 'number');
+
+            var minID = 'minRole_' + getRole();
+            min.setAttribute('id', minID);
+            min.setAttribute('min', '0');
+            min.setAttribute('max', '10');
+            min.setAttribute('style', 'margin-right: 5px; display: none');
+            min.setAttribute('label', 'Min:');
+            min.setAttribute('class', 'minMax');
+
+            var label_1 = document.createElement('label');
+            label_1.htmlFor = minID;
+            label_1.innerHTML = "Min: ";
+
+            var max = document.createElement("INPUT");
+            max.setAttribute('type', 'number');
+            var maxID = 'maxRole_' + getRole();
+            max.setAttribute('id', maxID);
+            max.setAttribute('class', 'minMax');
+
+            max.setAttribute('min', '0');
+            max.setAttribute('max', '10');
+            max.setAttribute('style', 'margin-right: 5px; display: none');
+            max.setAttribute('label', 'Max:');
+
+            var label_2 = document.createElement('label');
+            label_2.htmlFor = maxID;
+            label_2.innerHTML = "Max: ";
+
+            addRole();
+
+            var y = document.createElement('button');
+            y.setAttribute('content', 'test content');
+            y.setAttribute('class', 'properties');
+            y.innerHTML = 'Edit';
+
+            var z = document.createElement('button');
+            z.setAttribute('content', 'test content');
+            z.setAttribute('class', 'delete');
+            z.innerHTML = 'x';
+
+        //    node.appendChild(label_1);
+            node.appendChild(min);
+        //    node.appendChild(label_2);
+            node.appendChild(max);
+
+            node.appendChild(y);
+            node.appendChild(z);
+
+            var tabID = String(getSelectedTabId());
+
+            var tabContID = document.getElementById(tabID).children[0].id;
+
+            document.getElementById(tabContID).appendChild(node);
+
+            var active = $("#tabs .ui-tabs-panel:visible").attr("id");
+
+            var test = document.getElementById(active).getElementsByClassName(fieldClass);
+
+            if(test.length > 0) {
+                remake();
+            }
+        }
+    </script>
+
+    <script>
+    function outputData() {
+
+        var nameCheck = document.getElementById('nameTitle').value;
+
+        if(nameCheck == ""){
+            alert("Must name the output file!");
+            return;
+        }
+
+        var active = $("#tabs .ui-tabs-panel:visible").attr("id");
+
+        var tabID = new Array();
+        var tabs = $( "#tabs" ).children();
+        var tabCount = tabs.length - 1;
+        var idCount = 0;
+        var fieldTF = false;
+
+        var titlesID = tabs[0].id;
+
+        var tempTitles = document.getElementById(titlesID).children;
+
+        var tabTitles = new Array();
+        var titleCount = 0;
+
+        for(j = 0; j < tempTitles.length; j++) {
+            if(tempTitles[j].innerText != "+") {
+                tabTitles[titleCount] = tempTitles[j];
+                titleCount++;
+            }
+        }
+
+        var titleNames = new Array;
+
+        //Start the output String
+        var endString = "<Metadata>\n  <Options>\n";
+        var idArray = new Array();
+
+        var tabLength = new Array();
+
+        var groupID = new Array();
+        var idCounter = 0;
+
+        for(i = 1; i < tabs.length; i++) {
+            tabID[i-1] = tabs[i].id;
+        }
+
+        for(p = 0; p < tabID.length; p++) {
+            var elems = document.getElementById(tabID[p]).getElementsByTagName("li");
+
+            var check = document.getElementById(tabID[p]).getElementsByTagName("fieldset");
+
+            if(check.length > 0) {
+                for(q = 0; q < elems.length; q++) {
+                    var save = elems[q].parentNode.parentNode.className;
+                    if(save != 'innerGroup') {
+                        alert("Since a group is used - ALL elements must be in groups!");
+                        return;
+                    }
+                }
+            }
+        }
+
+        function optionsPrint(cursor) {
+            var type = cursor.type;
+
+            if(type == "") {
+                type = cursor.nodeName;
+            }
+
+            if(type == 'null') {
+
+            } else if(type == 'fieldset') {
+                //Print string and move to child node.
+                var name = "";
+
+                for(i = 0; i < cursor.childNodes.length; i++) {
+                    if(cursor.childNodes[i].localName == "legend") {
+                        name = cursor.childNodes[i].innerText;
+                    }
+                }
+
+                /*if(m > 0) {
+                    while(name.search("Edit") != -1){
+                        name = name.substring(6);
+                    }
+                } else {
+                    while(name.search("Edit") != -1){
+                        name = name.substring(5);
+                    }
+                }*/
+
+                /*if(m > 0) {
+                    name = name.substring(0, (name.length) - 3);
+                } else {*/
+                    name = name.substring(0, (name.length) - 2);
+                //}
+
+                endString = endString + '\t  <Option inputType="string" name="' + cursor.id + '">' + name + '</Option>\n';
+
+                optionsPrint(cursor.firstChild.firstChild);
+
+            } else if(type == 'UL') {
+                //print and return.
+                for(n = 0; n < cursor.children.length; n++) {
+                    optionsPrint(cursor.children[n]);
+                }
+            } else if(type == 'LI') {
+                var element = cursor.firstChild;
+
+                if(typeof element == 'label') {
+                    return;
+                }
+
+                var elemType = element.type;
+
+                var name = String(element.name);
+
+                var node = cursor.childNodes[3];
+
+                if(typeof elemType == 'undefined') {
+                    var test = element.className.slice(0, 10);
+
+                    if(test == 'slideStuff') {
+                        elemType = "slider";
+                    }
+                }
+
+                if (typeof node !== 'undefined') {
+                    if(node.nodeType == 3) {
+                        name = String(node.data);
+                    }
+                } else if(elemType == 'radio') {
+                    name = "";
+                }
+
+                if(elemType == 'checkbox') {
+                    var value = 0;
+
+                    if(element.checked) {
+                        value = 1;
+                    }
+
+                    endString = endString + '\t\t<Option defaultValue="'+ value +'" inputType="'+ String(elemType) +'" name="'+
+                        String(element.id) +'">'+ name +'</Option>\n\n';
+                } else if(elemType == 'radio') {
+                    var value = 0;
+
+                    if(element.checked) {
+                        value = 1;
+                    }
+
+                    endString = endString + '\t\t<Option defaultValue="'+ value +'" variable="'+ String(element.name) +'" inputType="'+ String(elemType) +'" name="'+
+                        String(element.id) +'">'+ name +'</Option>\n\n';
+                } else if(elemType == 'text') {
+                    if(element.className == "DS") {
+
+                    } else if(element.className == "date"){
+                        endString = endString + '\t\t<Option name="'+ String(element.id) +'" inputType="datepicker" format="monyy7.">'+ name +'</Option>\n\n';
+                    } else{
+                        endString = endString + '\t\t<Option inputType="inputtext" name="'+ String(element.id) +
+                            '" defaultValue="' + String(element.value) + '" width="250px">'+ name +'</Option>\n\n';
+                    }
+                } else if(elemType == 'select-one') {
+                    endString = endString + '\t\t<Option defaultValue="default" inputType="combobox" name="'+
+                        String(element.id) +'" width="264px">'+ name +'</Option>\n';
+
+                    for(j = 0; j < element.options.length; j++) {
+                        endString = endString + '\t\t<Option inputType="string" name="'+
+                            element.options[j].value.toLowerCase() +'">'+ String(element.options[j].value) +"</Option>\n";
+                    }
+
+                    endString = endString + '\n';
+                } else if(elemType == 'number') {
+                    var value = element.value;
+                    if(value == "") {
+                        value = element.min;
+                    }
+                    endString = endString + '\t\t<Option name="'+ String(element.id) +'" defaultValue="'+ value +'" inputType="numstepper" minValue="'+ String(element.min) +
+                            '" maxValue="'+ String(element.max) +'">'+ name +'</Option>\n\n';
+                } else if(elemType == 'color') {
+                    endString = endString + '\t\t<Option name="'+ String(element.id) +'" defaultValue="'+ String(element.value) +'" inputType="color">'+ name +'</Option>\n\n';
+                } else if(elemType == 'slider') {
+                    endString = endString + '\t\t<Option name="'+ String(element.id) +'" inputType="slider" showButtons="false">'+ name +'</Option>\n\n';
+                }
+            }
+        }
+
+        //For each tab...
+        for(m = 0; m < tabCount; m++) {
+
+            var tabContID = document.getElementById(tabID[m]).children[0].id;
+
+            var childArray = document.getElementById(tabContID).childNodes;
+
+            var dropOptions = new Array();
+
+            var groupLI = new Array();
+
+            //1. Print tab string from tabTitles
+            var elem = tabTitles[m].innerText;
+
+            if(m > 0) {
+                elem = elem.slice(0, (elem.length) - 2);
+            }
+
+            endString = endString + '\t<Option inputType="string" name="' + tabs[m].id + '">' + elem + '</Option>\n';
+
+            var dsString = "";
+
+            var temp = document.getElementById(tabID[m]).getElementsByTagName("LI");
+            var liElements = new Array();
+
+            for(count = 0; count < temp.length; count++) {
+                liElements[count] = temp[count].cloneNode(true);
+            }
+
+            //Need to scan for DataSources first, as well as the roles accompanying them.
+            dsString = "\t<DataSources>\n";
+            var dsEmpty = "false";
+
+            var type;
+            var name;
+            var className;
+
+            for(x = 0; x < liElements.length; x++) {
+                type = liElements[x].firstChild.type;
+                name = liElements[x].firstChild.name;
+                className = liElements[x].firstChild.className;
+
+                if(type == 'label' || typeof type == 'undefined') {
+                    type = liElements[x].childNodes[1].type;
+                    name = liElements[x].childNodes[1].name;
+                    className = liElements[x].childNodes[1].className;
+                }
+
+                if(type != "text") {
+                    liElements.splice(x, 1);
+                    x--;
+                } else {
+                    if(className != "DS" && className != "tiedElem") {
+                        liElements.splice(x, 1);
+                        x--;
+                    }
+                }
+            }
+
+            //Now have array filled with DataSources and roles ONLY.
+            // Find first DataSource, then look for connected roles.
+            //  End the DataSource, then move to the next, removing nodes along the way.
+
+            var dsName = "";
+
+            if(liElements.length == 0) {
+                dsEmpty = "true";
+            }
+
+            while(liElements.length > 0) {
+                var counter = 0;
+
+                while(liElements[counter].firstChild.className != "DS" && counter < liElements.length) {
+                    counter++;
+                }
+
+                dsName = liElements[counter].firstChild.id;
+
+                var name = "";
+
+                if(liElements[counter].firstChild.value != "") {
+                    name = liElements[counter].firstChild.value;
+                } else {
+                    name = dsName;
+                }
+
+                dsString = dsString + '\t\t<DataSource name="'+ name +'" where="true">\n';
+
+                dsString = dsString + '\t\t\t<Roles>\n';
+
+                liElements.splice(counter, 1);
+
+                dsString = findRoles(liElements, dsName, dsString);
+
+                dsString = dsString + '\t\t\t</Roles>\n\t\t</DataSource>\n';
+            }
+
+            dsString = dsString + '\t</DataSources>\n\n';
+
+            if(dsEmpty == "true") {
+                dsString = "";
+            }
+
+            function findRoles(elements, name, string) {
+                var elem;
+
+                for(n = 0; n < elements.length; n++) {
+                    elem = elements[n].childNodes[1];
+
+                    if(elem.type == 'text') {
+                        if(elem.value == name) {
+                            var id = elem.id;
+                            var min = 0;//elements[n].childNodes[6].value;
+                            var max = 0;//elements[n].childNodes[8].value;
+                            //var e = elements[n].childNodes[3];
+                            var type = "A";//e.options[e.selectedIndex].text;
+
+                            if(!min) {
+                                min = 0;
+                            }
+                            if(!max) {
+                                max = 0;
+                            }
+                            string = string + '\t\t\t\t<Role maxVars="'+ max +'" minVars="'+ min +'" name="'+ id +'" order="true" type="'+ type +'">'+ "TESTING" +'</Role>\n';
+
+                            elements.splice(n, 1);
+                            n--;
+                        }
+                    }
+                }
+
+                return(string);
+            }
+
+            var opsNumb = endString.search("<Options>");
+
+            endString = endString.substring(0, opsNumb) + dsString + endString.substring(opsNumb-3);
+
+            //2. If fieldset or LI, print. Else, skip it
+            //     -Since all elements must be in groups if one exists, check first element.
+            //     -If it is a group, print the string for the group, then move down the group. Ignore div's and ul's.
+
+            var z = 0;
+
+            if(m == 0) {
+                z = 1;
+            }
+
+            //For each element in the tab.
+            for(z; z < childArray.length; z++) {
+                var cursor = childArray[z];
+
+                optionsPrint(cursor);
+            }
+        }
+
+        var pos = 0;
+        var i = -1;
+
+        // Search the string and counts the number of e's
+        while (pos != -1) {
+            pos = endString.indexOf("\n", i + 1);
+            if(pos != -1) {
+                i = pos;
+            }
+        }
+
+        endString = endString.substring(0, i) + '  </Options>\n</Metadata>\n';
+
+        //UI SECTION
+        var uiString = "<UI>\n";
+
+        function uiPrint(cursor) {
+            var type = cursor.type;
+
+            if(type == "") {
+                type = cursor.nodeName;
+            }
+
+            if(type == 'null') {
+
+            } else if(type == 'fieldset') {
+                //Print string and move to child node.
+                var name = cursor.innerText;
+
+                if(m > 0) {
+                    while(name.search("Edit") != -1){
+                        name = name.substring(6);
+                    }
+                } else {
+                    while(name.search("Edit") != -1){
+                        name = name.substring(5);
+                    }
+                }
+
+                name = name.substring(0, (name.length) - 2);
+
+                uiString = uiString + '\t  <Group open="true" option="' + cursor.id + '">\n';
+
+                uiPrint(cursor.firstChild.firstChild);
+
+                uiString = uiString + '\t  </Group>\n\n';
+
+            } else if(type == 'UL') {
+                //print and return.
+                for(n = 0; n < cursor.children.length; n++) {
+                    uiPrint(cursor.children[n]);
+                }
+            } else if(type == 'LI') {
+                var element = cursor.firstChild;
+                var elemType = element.type;
+                var role = "false";
+
+                if(element.localName == "label") {
+                    element = cursor.childNodes[1];
+                    elemType = element.type;
+                    role = "true";
+                }
+
+                if(typeof elemType == 'undefined') {
+                    var test = element.className.slice(0, 10);
+
+                    if(test == 'slideStuff') {
+                        elemType = "slider";
+                    }
+                }
+
+                if(elemType == 'checkbox' || elemType == 'radio' || elemType == 'color' || elemType == 'number' || elemType == 'slider') {
+                    uiString = uiString + '\t\t<OptionItem option="'+ String(element.id) +'"/>\n';
+                } else if(elemType == 'text') {
+                    if(role == "true") {
+                        uiString = uiString + '\t\t<RoleItem role="'+ String(element.id) +'"/>\n';
+                    } else if(element.className == "DS") {
+                        uiString = uiString + '\t\t<DataItem data="'+ String(element.id) +'"/>\n';
+                    } else {
+                        uiString = uiString + '\t\t<OptionItem option="'+ String(element.id) +'"/>\n';
+                    }
+                } else if(elemType == 'select-one') {
+                    uiString = uiString + '\t\t<OptionChoice option="'+ String(element.id) +'">\n';
+
+                    for(j = 0; j < element.options.length; j++) {
+                        uiString = uiString + '\t\t <OptionItem option="'+
+                            element.options[j].value.toLowerCase() +'"/>\n';
+                    }
+
+                    uiString = uiString + '\t\t</OptionChoice>\n\n';
+                }
+            }
+        }
+
+        for(m = 0; m < tabCount; m++) {
+
+            var tabContID = document.getElementById(tabID[m]).children[0].id;
+
+            var childArray = document.getElementById(tabContID).childNodes;
+
+            var elem = tabTitles[m].innerText;
+
+            if(m > 0) {
+                elem = elem.slice(0, (elem.length) - 2);
+            }
+
+            uiString = uiString + '\t<Container option="' + tabs[m].id + '">\n';
+
+            var z = 0;
+
+            if(m == 0) {
+                z = 1;
+            }
+
+            for(z; z < childArray.length; z++) {
+                var cursor = childArray[z];
+
+                uiPrint(cursor);
+            }
+
+            uiString = uiString + '\t</Container>\n\n';
+        }
+
+        uiString = uiString + '</UI>\n'
+
+        var name = document.getElementById("nameTitle").value;
+        var descrip = document.getElementById("descTitle").value;
+        var procs = document.getElementById("procTitle").value;
+
+        var regiString = '<?xml version="1.0" encoding="UTF-8"?><Task schemaVersion="5.0">\n' +
+        "\t<Registration>\n" + "\t\t<Name>" + name + "</Name>\n" + "\t\t<Description>" + descrip + "</Description>\n" +
+        "\t\t<GUID>454536B-485B-493E-B21A-EF19D7DA3E1C</GUID>\n" +
+        "\t\t<Procedures>"+ procs + "</Procedures>\n" + "\t\t<Version>3.5</Version>\n" +
+        "\t\t<Links>\n" + '\t\t<Link href="http://support.sas.com/documentation/onlinedoc/sasstudio/index.html">SAS Studio Users Guide</Link>\n' +
+        '\t\t<Link href=""> </Link>\n' + '\t\t<Link href=""> </Link>\n' +
+        '\t\t<Link href="http://support.sas.com/documentation/cdl/en/proc/68954/HTML/default/viewer.htm#p1dlh3svb4rrasn14h8jm6nyrj5o.htm">The PRINT Procedure</Link>\n' +
+        '\t\t<Link href=""> </Link>\n' + '\t\t<Link href=""> </Link>\n' +
+        '\t\t<Link href="http://support.sas.com/documentation/cdl/en/proc/68954/HTML/default/viewer.htm#p0ha9ymifyaqldn14m2xlqw252wa.htm">The SORT Procedure</Link>\n' +
+        '\t\t<Link href=""> </Link>\n' + '\t\t<Link href=""> </Link>\n' +
+        '\t\t<Link href="http://support.sas.com/training/studio">SAS Tutorials</Link>\n' +
+        "\t  </Links>\n" + "\t<Category>Data</Category>\n" + "</Registration>\n";
+
+        var modal = document.getElementById('myModal');
+        var btn = document.getElementById("buttOutput");
+        var span = document.getElementsByClassName("close")[0];
+
+        var completeString = regiString + endString + uiString;
+
+        document.getElementById('modalContent').value = completeString;
+
+        modal.style.display = "block";
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if(event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    }
+    </script>
+
+    <script type="text/javascript">
+        $(document).on('click', '.delete', function() {
+            document.getElementById("list_3").innerHTML = "";
+            $(this).closest('.base').remove();
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).on('click', '.properties', function() {
+
+            var statusNode = $(this).prev().attr('class');
+            var currentNode = $(this).prev().attr('id');
+
+            if(statusNode === "check") {
+                checkProperties(currentNode);
+            }
+            else if(statusNode === "rad") {
+                radioProperties(currentNode);
+            }
+            else if(statusNode === "txt") {
+                textBoxProperties(currentNode);
+            }
+            else if(statusNode === "dropdown") {
+                dropProps(currentNode);
+            }
+            else if(statusNode === "date" || statusNode === "date hasDatepicker") {
+                dateProps(currentNode);
+            }
+            else if(statusNode === "numbah") {
+                numProps(currentNode);
+            }
+            else if(statusNode === "colors") {
+                colorProps(currentNode);
+            }
+            else if(statusNode.search("slideStuff") != -1){
+                slideProps(currentNode);
+            }
+            else if(statusNode === "minMax") {
+                roleProps(currentNode);
+            }
+            else {
+                alert("None");
+            }
+        });
+    </script>
+
+    <!-- Checkbox button Properties. -->
+    <script>
+        function checkProperties(myValue) {
+            document.getElementById("list_3").innerHTML = "";
+            var linebreak = document.createElement('br');
+
+            //Properties Title
+            var node = document.createElement("LI");
+            var x = document.createTextNode("Checkbox");
+
+            var el_span = document.createElement('span');
+            el_span.setAttribute('class', 'propLabel');
+
+            el_span.appendChild(x);
+            node.appendChild(el_span);
+            document.getElementById("list_3").appendChild(node);
+
+            //Textbox for Label change.
+            var node2 = document.createElement("LI");
+            var label = document.createTextNode("Label: ");
+
+            var y = document.createElement('input');
+            y.setAttribute('type', 'text');
+            y.setAttribute('id', 'selector');
+
+            var elem = document.getElementById(myValue).name;
+
+            if(elem != "") {
+                y.setAttribute('value', elem);
+            }
+            //y.setAttribute("onchange", "labelChange()");
+            y.addEventListener("change", function() {
+                setValues(myValue, y);
+            });
+
+            function setValues(myVal, y) {
+                document.getElementById(myVal).setAttribute('name', y.value);
+                var sturf = document.createTextNode(String(y.value));
+                var searching = document.getElementById(myVal).parentNode;
+                if(searching.lastChild.nodeType == 3) {
+                    searching.lastChild.remove();
+                }
+                document.getElementById(myVal).parentNode.appendChild(sturf);
+            }
+            //$('input[name=myInput]').change(function() { ... });
+
+            node2.appendChild(label);
+            node2.appendChild(y);
+            document.getElementById("list_3").appendChild(node2);
+
+            //Default value buttons.
+            var node3 = document.createElement("LI");
+            var On = document.createElement("INPUT");
+            On.setAttribute("type", "radio");
+            On.setAttribute('id', 'on');
+            On.setAttribute('class', 'switch');
+            On.setAttribute('value', 'checked');
+            On.setAttribute('name', 'onOff');
+            On.addEventListener("change", function() {
+                changeBox(myValue);
+            });
+
+            function changeBox(myVal) {
+                document.getElementById(myVal).checked = !document.getElementById(myVal).checked;
+            }
+
+            var Off = document.createElement("INPUT");
+            Off.setAttribute("type", "radio");
+            Off.setAttribute('id', 'off');
+            Off.setAttribute('class', 'switch');
+            Off.setAttribute('value' , 'unchecked');
+            Off.setAttribute('name', 'onOff');
+
+            if(document.getElementById(myValue).checked) {
+                On.setAttribute('checked', 'true');
+            } else {
+                Off.setAttribute('checked', 'true');
+            }
+
+            Off.addEventListener("change", function() {
+                changeBox(myValue);
+            });
+
+            document.getElementById(myValue).addEventListener("change", function() {
+                if(On.checked) {
+                    On.checked = false;
+                    Off.checked = true;
+                } else {
+                    Off.checked = false;
+                    On.checked = true;
+                }
+            });
+
+            var onLabel = document.createTextNode("Checked:  ");
+            node3.appendChild(onLabel);
+            node3.appendChild(On);
+
+            node3.appendChild(linebreak);
+
+            var offLabel = document.createTextNode("Unchecked: ");
+            node3.appendChild(offLabel);
+            node3.appendChild(Off);
+
+            document.getElementById("list_3").appendChild(node3);
+        }
+    </script>
+
+    <script>
+        function labelChange() {
+            alert("got here");
+            button.properties.label = y.getAttribute('value');
+        }
+    </script>
+
+    <!-- Radio button Properties. -->
+    <script>
+        function radioProperties(myValue) {
+            document.getElementById("list_3").innerHTML = "";
+
+            var node = document.createElement("LI");
+            var x = document.createTextNode("Radio Button");
+            var el_span = document.createElement('span');
+            el_span.setAttribute('class', 'propLabel');
+
+            el_span.appendChild(x);
+            node.appendChild(el_span);
+            document.getElementById("list_3").appendChild(node);
+
+            var node2 = document.createElement("LI");
+            var label = document.createTextNode("Label: ");
+
+            var y = document.createElement('input');
+            y.setAttribute('type', 'text');
+            y.setAttribute('id', 'selector');
+
+            var elem = "";
+
+            var temp = document.getElementById(myValue).parentNode;
+            var child = temp.childNodes;
+            var count = child.length;
+
+            if(count == '4') {
+                elem =child[3].textContent;
+            }
+
+            if(elem != "") {
+                y.setAttribute('value', elem);
+            }
+            //y.setAttribute("onchange", "labelChange()");
+            y.addEventListener("change", function() {
+                setLabel(myValue, y);
+            });
+
+            function setLabel(myVal, y) {
+                var sturf = document.createTextNode(String(y.value));
+                var searching = document.getElementById(myVal).parentNode;
+                if(searching.lastChild.nodeType == 3) {
+                    searching.lastChild.remove();
+                }
+                document.getElementById(myVal).parentNode.appendChild(sturf);
+            }
+
+            function setValues(myVal, y) {
+                document.getElementById(myVal).setAttribute('name', y.value);
+            }
+
+            node2.appendChild(label);
+            node2.appendChild(y);
+            document.getElementById("list_3").appendChild(node2);
+
+            var node3 = document.createElement("LI");
+            var label2 = document.createTextNode("Group Name: ");
+
+            var groupLabel = document.createElement('input');
+            groupLabel.setAttribute('type', 'text');
+            groupLabel.setAttribute('id', 'selector2');
+
+            var elem2 = document.getElementById(myValue).name;
+
+            if(elem2 != myValue) {
+                groupLabel.setAttribute('value', elem2);
+            }
+
+            groupLabel.addEventListener("change", function() {
+                setValues(myValue, groupLabel);
+                //document.getElementById(myValue).checked = false;
+            });
+
+            node3.appendChild(label2);
+            node3.appendChild(groupLabel);
+            document.getElementById("list_3").appendChild(node3);
+        }
+    </script>
+
+    <!-- Textbox button Properties. -->
+    <script>
+        function textBoxProperties(myValue) {
+            document.getElementById("list_3").innerHTML = "";
+
+            var node = document.createElement("LI");
+            var x = document.createTextNode("Textbox");
+            var el_span = document.createElement('span');
+            el_span.setAttribute('class', 'propLabel');
+
+            el_span.appendChild(x);
+            node.appendChild(el_span);
+            document.getElementById("list_3").appendChild(node);
+
+            var node2 = document.createElement("LI");
+            var label = document.createTextNode("Label: ");
+
+            var y = document.createElement('input');
+            y.setAttribute('type', 'text');
+            y.setAttribute('id', 'selector');
+
+            var elem = "";
+
+            var temp = document.getElementById(myValue).parentNode;
+            var child = temp.childNodes;
+            var count = child.length;
+
+            if(count == '4') {
+                elem =child[3].textContent;
+            }
+
+            if(elem != "") {
+                y.setAttribute('value', elem);
+            }
+            //y.setAttribute("onchange", "labelChange()");
+            y.addEventListener("change", function() {
+                setLabel(myValue, y);
+            });
+
+            function setLabel(myVal, y) {
+                var sturf = document.createTextNode(String(y.value));
+                var searching = document.getElementById(myVal).parentNode;
+                if(searching.lastChild.nodeType == 3) {
+                    searching.lastChild.remove();
+                }
+                document.getElementById(myVal).parentNode.appendChild(sturf);
+            }
+
+            node2.appendChild(label);
+            node2.appendChild(y);
+            document.getElementById("list_3").appendChild(node2);
+
+            var node3 = document.createElement("LI");
+            var label2 = document.createTextNode("Value: ");
+
+            var groupLabel = document.createElement('input');
+            groupLabel.setAttribute('type', 'text');
+            groupLabel.setAttribute('id', 'selector2');
+
+            var elem2 = document.getElementById(myValue).value;
+
+            if(elem2 != myValue) {
+                groupLabel.setAttribute('value', elem2);
+            }
+
+            groupLabel.addEventListener("change", function() {
+                setValues(myValue, groupLabel);
+                //document.getElementById(myValue).checked = false;
+            });
+
+            function setValues(myVal, y) {
+                document.getElementById(myVal).value = y.value;
+            }
+
+            node3.appendChild(label2);
+            node3.appendChild(groupLabel);
+            document.getElementById("list_3").appendChild(node3);
+        }
+    </script>
+
+    <script>
+        function dropProps(myValue) {
+            document.getElementById("list_3").innerHTML = "";
+
+            var node = document.createElement("LI");
+            var x = document.createTextNode("Combobox");
+            var el_span = document.createElement('span');
+            el_span.setAttribute('class', 'propLabel');
+
+            el_span.appendChild(x);
+            node.appendChild(el_span);
+            document.getElementById("list_3").appendChild(node);
+
+            var node2 = document.createElement("LI");
+            var label = document.createTextNode("Label: ");
+
+            var y = document.createElement('input');
+            y.setAttribute('type', 'text');
+            y.setAttribute('id', 'selector');
+
+            var elem = "";
+
+            var temp = document.getElementById(myValue).parentNode;
+            var child = temp.childNodes;
+            var count = child.length;
+
+            if(count == '4') {
+                elem = child[3].textContent;
+            }
+
+            if(elem != "") {
+                y.setAttribute('value', elem);
+            }
+            //y.setAttribute("onchange", "labelChange()");
+            y.addEventListener("change", function() {
+                setLabel(myValue, y);
+            });
+
+            function setLabel(myVal, y) {
+                var sturf = document.createTextNode(String(y.value));
+                var searching = document.getElementById(myVal).parentNode;
+                if(searching.lastChild.nodeType == 3) {
+                    searching.lastChild.remove();
+                }
+                document.getElementById(myVal).parentNode.appendChild(sturf);
+            }
+
+            node2.appendChild(label);
+            node2.appendChild(y);
+            document.getElementById("list_3").appendChild(node2);
+
+            var node3 = document.createElement("LI");
+            var field = document.createElement('input');
+            field.setAttribute('type', 'text');
+            field.setAttribute('id', 'addition');
+
+            var butt = document.createElement("INPUT");
+            butt.setAttribute("type", "button");
+            butt.setAttribute("value", "Add");
+
+            butt.addEventListener("click", function() {
+                addEntry(myValue, field);
+            });
+
+            function addEntry(myVal, field) {
+                var entry = document.createElement("option");
+                entry.text = field.value;
+                var copy = document.createElement("option");
+                copy.text = field.value;
+                document.getElementById(myVal).add(entry);
+                document.getElementById('myList').add(copy);
+                field.value = "";
+            }
+
+            node3.appendChild(field);
+            node3.appendChild(butt);
+            document.getElementById("list_3").appendChild(node3);
+
+            var node4 = document.createElement("LI");
+            var menu = document.createElement('div');
+            var e = document.getElementById(myValue);
+            var optionsArray = new Array();
+
+            for(i = 0; i < e.options.length; i++) {
+                optionsArray[i] = e.options[i].value;
+            }
+
+            menu.innerHTML = "<select id='myList' size='6'>"
+                + "</select>";
+
+            while(menu.firstChild) {
+                node4.appendChild(menu.firstChild);
+            }
+
+            var del = document.createElement("INPUT");
+            del.setAttribute("type", "button");
+            del.setAttribute("value", "Delete");
+            del.setAttribute('id', 'removeOption');
+
+            del.addEventListener('click', function() {
+                deleteOption(myValue);
+            });
+
+            function deleteOption(myVal) {
+                var elt = document.getElementById('myList');
+
+                document.getElementById(myVal).remove(elt.selectedIndex);
+                elt.remove(elt.selectedIndex);
+            }
+
+            node4.appendChild(del);
+            document.getElementById("list_3").appendChild(node4);
+
+            for(i = 0; i < optionsArray.length; i++) {
+                var enter = document.createElement("option");
+                enter.text = optionsArray[i];
+                document.getElementById('myList').add(enter);
+            }
+        }
+    </script>
+
+    <script>
+        function dateProps(myValue) {
+            document.getElementById("list_3").innerHTML = "";
+            var linebreak = document.createElement('br');
+
+            //Properties Title
+            var node = document.createElement("LI");
+            var x = document.createTextNode("Datepicker");
+            var el_span = document.createElement('span');
+            el_span.setAttribute('class', 'propLabel');
+
+            el_span.appendChild(x);
+            node.appendChild(el_span);
+            document.getElementById("list_3").appendChild(node);
+
+            //Textbox for Label change.
+            var node2 = document.createElement("LI");
+            var label = document.createTextNode("Label: ");
+
+            var y = document.createElement('input');
+            y.setAttribute('type', 'text');
+            y.setAttribute('id', 'selector');
+
+            var elem = document.getElementById(myValue).name;
+
+            if(elem != "") {
+                y.setAttribute('value', elem);
+            }
+            //y.setAttribute("onchange", "labelChange()");
+            y.addEventListener("change", function() {
+                setValues(myValue, y);
+            });
+
+            function setValues(myVal, y) {
+                document.getElementById(myVal).setAttribute('name', y.value);
+                var sturf = document.createTextNode(String(y.value));
+                var searching = document.getElementById(myVal).parentNode;
+                if(searching.lastChild.nodeType == 3) {
+                    searching.lastChild.remove();
+                }
+                document.getElementById(myVal).parentNode.appendChild(sturf);
+            }
+            //$('input[name=myInput]').change(function() { ... });
+
+            node2.appendChild(label);
+            node2.appendChild(y);
+            document.getElementById("list_3").appendChild(node2);
+        }
+    </script>
+
+    <script>
+        function numProps(myValue) {
+            document.getElementById("list_3").innerHTML = "";
+            var linebreak = document.createElement('br');
+
+            //Properties Title
+            var node = document.createElement("LI");
+            var x = document.createTextNode("Numstepper");
+            var el_span = document.createElement('span');
+            el_span.setAttribute('class', 'propLabel');
+
+            el_span.appendChild(x);
+            node.appendChild(el_span);
+            document.getElementById("list_3").appendChild(node);
+
+            //Textbox for Label change.
+            var node2 = document.createElement("LI");
+            var label = document.createTextNode("Label: ");
+
+            var y = document.createElement('input');
+            y.setAttribute('type', 'text');
+            y.setAttribute('id', 'selector');
+
+            var elem = document.getElementById(myValue).name;
+
+            if(elem != "") {
+                y.setAttribute('value', elem);
+            }
+            //y.setAttribute("onchange", "labelChange()");
+            y.addEventListener("change", function() {
+                setValues(myValue, y);
+            });
+
+            function setValues(myVal, y) {
+                document.getElementById(myVal).setAttribute('name', y.value);
+                var sturf = document.createTextNode(String(y.value));
+                var searching = document.getElementById(myVal).parentNode;
+                if(searching.lastChild.nodeType == 3) {
+                    searching.lastChild.remove();
+                }
+                document.getElementById(myVal).parentNode.appendChild(sturf);
+            }
+
+            node2.appendChild(label);
+            node2.appendChild(y);
+            document.getElementById("list_3").appendChild(node2);
+
+            //Change the min and max values.
+            var node3 = document.createElement("LI");
+            var labelMin = document.createTextNode("Min. Value: ");
+
+            var min = document.createElement('input');
+            min.setAttribute('type', 'text');
+            min.setAttribute('id', 'minVal');
+
+            var max = document.createElement('input');
+            max.setAttribute('type', 'text');
+            max.setAttribute('id', 'minVal');
+
+            var tempMin = document.getElementById(myValue).getAttribute("min");
+            var tempMax = document.getElementById(myValue).getAttribute("max");
+            min.setAttribute('value', tempMin);
+            max.setAttribute('value', tempMax);
+
+            min.addEventListener("change", function() {
+                setMin(myValue, min);
+            });
+
+            max.addEventListener("change", function() {
+                setMax(myValue, max);
+            });
+
+            function setMin(myVal, min) {
+                document.getElementById(myVal).setAttribute("min", min.value);
+
+                var tempVal = document.getElementById(myVal).value;
+                var minVal = min.value;
+
+                if(tempVal < minVal) {
+                    document.getElementById(myVal).value = minVal;
+                }
+            }
+
+            function setMax(myVal, max) {
+                document.getElementById(myVal).setAttribute('max', max.value);
+
+                var tempVal = document.getElementById(myVal).value;
+                var maxVal = max.value;
+
+                if(tempVal > maxVal) {
+                    document.getElementById(myVal).value = maxVal;
+                }
+            }
+
+            var minText = document.createTextNode("Min: ");
+            var maxText = document.createTextNode("Max: ");
+
+            node3.appendChild(minText);
+            node3.appendChild(min);
+            node3.appendChild(linebreak);
+            node3.appendChild(maxText);
+            node3.appendChild(max);
+            document.getElementById("list_3").appendChild(node3);
+        }
+
+        function colorProps(myValue) {
+            document.getElementById("list_3").innerHTML = "";
+            var linebreak = document.createElement('br');
+
+            //Properties Title
+            var node = document.createElement("LI");
+            var x = document.createTextNode("Color Picker");
+            var el_span = document.createElement('span');
+            el_span.setAttribute('class', 'propLabel');
+
+            el_span.appendChild(x);
+            node.appendChild(el_span);
+            document.getElementById("list_3").appendChild(node);
+
+            //Textbox for Label change.
+            var node2 = document.createElement("LI");
+            var label = document.createTextNode("Label: ");
+
+            var y = document.createElement('input');
+            y.setAttribute('type', 'text');
+            y.setAttribute('id', 'selector');
+
+            var elem = document.getElementById(myValue).name;
+
+            if(elem != "") {
+                y.setAttribute('value', elem);
+            }
+            //y.setAttribute("onchange", "labelChange()");
+            y.addEventListener("change", function() {
+                setValues(myValue, y);
+            });
+
+            function setValues(myVal, y) {
+                document.getElementById(myVal).setAttribute('name', y.value);
+                var sturf = document.createTextNode(String(y.value));
+                var searching = document.getElementById(myVal).parentNode;
+                if(searching.lastChild.nodeType == 3) {
+                    searching.lastChild.remove();
+                }
+                document.getElementById(myVal).parentNode.appendChild(sturf);
+            }
+            //$('input[name=myInput]').change(function() { ... });
+
+            node2.appendChild(label);
+            node2.appendChild(y);
+            document.getElementById("list_3").appendChild(node2);
+
+            var node3 = document.createElement("LI");
+            var label2 = document.createTextNode("Color (6-digit): ");
+
+            var choose = document.createElement('input');
+            choose.setAttribute('type', 'text');
+            choose.setAttribute('id', 'chooser');
+
+            choose.addEventListener("change", function() {
+                changeColor(myValue, choose);
+            });
+
+            function changeColor(myVal, colorVal) {
+                var colorString = String(colorVal.value);
+
+                if(colorString.search('#') == -1) {
+                    colorString = '#' + colorString;
+                    document.getElementById(myVal).setAttribute('value', colorString);
+                } else {
+                    document.getElementById(myVal).setAttribute('value', colorVal.value);
+                }
+            }
+
+            node3.appendChild(label2);
+            node3.appendChild(choose);
+            document.getElementById("list_3").appendChild(node3);
+        }
+
+        function slideProps(myValue) {
+            document.getElementById("list_3").innerHTML = "";
+            var linebreak = document.createElement('br');
+
+            //Properties Title
+            var node = document.createElement("LI");
+            var x = document.createTextNode("Slider");
+            var el_span = document.createElement('span');
+            el_span.setAttribute('class', 'propLabel');
+
+            el_span.appendChild(x);
+            node.appendChild(el_span);
+            document.getElementById("list_3").appendChild(node);
+
+            //Textbox for Label change.
+            var node2 = document.createElement("LI");
+            var label = document.createTextNode("Label: ");
+
+            var y = document.createElement('input');
+            y.setAttribute('type', 'text');
+            y.setAttribute('id', 'selector');
+
+            var elem = document.getElementById(myValue).parentNode;
+            var name = "";
+
+            var node = elem.childNodes[3];
+
+            if (typeof node !== 'undefined') {
+                if(node.nodeType == 3) {
+                    name = String(node.data);
+                }
+            }
+
+            if(name != "") {
+                y.setAttribute('value', name);
+            }
+            //y.setAttribute("onchange", "labelChange()");
+            y.addEventListener("change", function() {
+                setValues(myValue, y);
+            });
+
+            function setValues(myVal, y) {
+                var sturf = document.createTextNode(String(y.value));
+                var searching = document.getElementById(myVal).parentNode;
+                if(searching.lastChild.nodeType == 3) {
+                    searching.lastChild.remove();
+                }
+                document.getElementById(myVal).parentNode.appendChild(sturf);
+            }
+            //$('input[name=myInput]').change(function() { ... });
+
+            node2.appendChild(label);
+            node2.appendChild(y);
+            document.getElementById("list_3").appendChild(node2);
+        }
+
+        function roleProps(myValue) {
+
+            document.getElementById("list_3").innerHTML = "";
+
+            var node = document.createElement("LI");
+            var x = document.createTextNode("Role");
+            var el_span = document.createElement('span');
+            el_span.setAttribute('class', 'propLabel');
+
+            el_span.appendChild(x);
+            node.appendChild(el_span);
+            document.getElementById("list_3").appendChild(node);
+
+            var active = $("#tabs .ui-tabs-panel:visible").attr("id");
+
+            var temp = document.getElementById(active).getElementsByTagName("li");
+            var elems = new Array();
+
+            var finalEntries = new Array();
+
+            for(j = 0; j < temp.length; j++) {
+                elems[j] = temp[j].cloneNode(true);
+            }
+
+            for(var i = 0; i < elems.length; i++) {
+                var temp = elems[i].firstChild;
+
+                if(temp.className == "DS") {
+                    finalEntries.push(elems[i]);
+                }
+            }
+
+            var node4 = document.createElement("LI");
+            var menu = document.createElement('div');
+            menu.innerHTML = "<select id='dsOptions' size='6'>"
+                + "</select>";
+
+            while(menu.firstChild) {
+                node4.appendChild(menu.firstChild);
+            }
+
+            var submit = document.createElement('INPUT');
+            submit.setAttribute('type', 'button');
+            submit.value = "Connect To";
+
+            submit.addEventListener('click', function() {
+                var e = document.getElementById("dsOptions");
+                var str = e.options[e.selectedIndex].text;
+
+                document.getElementById(myValue).parentNode.children[1].value = str;
+            });
+
+            node4.appendChild(submit);
+
+            document.getElementById("list_3").appendChild(node4);
+
+            for(i = 0; i < finalEntries.length; i++) {
+                var enter = document.createElement("option");
+                enter.text = String(finalEntries[i].firstChild.id);
+                document.getElementById('dsOptions').add(enter);
+            }
+
+
+        }
+    </script>
+
+    <script>
+    $(function() {
+        var tabTitle = $( "#tab_title" ),
+          tabTemplate = "<li class='tabEdit'><input class='txtTab' type='text'/><a href='#{href}' class='tabHeader'>#{label}</a> <a href='#' class='removeX'>x</a></li>",
+          tabCounter = 2;
+
+        var tabs = $( "#tabs" ).tabs();
+
+        // modal dialog init: custom buttons and a "close" callback reseting the form inside
+        var dialog = $( "#dialog" ).dialog({
+          autoOpen: false,
+          modal: true,
+          buttons: {
+            Add: function() {
+              addTab();
+              $( this ).dialog( "close" );
+            },
+            Cancel: function() {
+              $( this ).dialog( "close" );
+            }
+          },
+          close: function() {
+            form[ 0 ].reset();
+          }
+        });
+
+        // addTab form: calls addTab function on submit and closes the dialog
+        var form = dialog.find( "form" ).submit(function( event ) {
+          addTab();
+          dialog.dialog( "close" );
+          event.preventDefault();
+        });
+
+        // actual addTab function: adds new tab using the input from the form above
+        function addTab() {
+          var label = tabTitle.val() || "Tab " + tabCounter,
+            id = "tabs-" + tabCounter,
+            li = $( tabTemplate.replace( /#\{href\}/g, "#" + id ).replace( /#\{label\}/g, label ) );
+
+          tabs.find( ".ui-tabs-nav" ).append( li );
+          tabs.append( "<div id='" + id + "' style='width:98%; height:95%'>" +
+                        '<ul id="' + id + '-cont" class="tabContent"' + 'style="list-style-type:none"></ul>' +
+                    "</div>" );
+          tabs.tabs( "refresh" );
+          $("#tabs-2-cont").sortable({
+              placeholder: "ui-sortable-placeholder"
+          });
+          tabCounter++;
+
+          renameTabs();
+        }
+
+        // addTab button: just opens the dialog
+        $( "#add_tab" )
+          .button()
+          .click(function() {
+            dialog.dialog( "open" );
+          });
+
+        // close icon: removing the tab on click
+        tabs.delegate( "a.removeX", "click", function() {
+            var panelId = $( this ).closest( "li" ).remove().attr( "aria-controls" );
+            $( "#" + panelId ).remove();
+            tabs.tabs( "refresh" );
+        });
+    });
+    </script>
+    <!--Attempt to rename tabs...  -->
+    <script>
+    $(function() {
+        var tabs = $( "#tabs" ).tabs();
+        tabs.find( ".ui-tabs-nav" ).sortable({
+               axis: "x",
+               stop: function() {
+                  tabs.tabs( "refresh" );
+              },
+              select: function(event, ui) {
+                  alert("PRESSED TAB!");
+              }
+         });
+         $('.tabEdit').on('dblclick',function(){
+             $(this).find('input').toggle().val($(this).find('a.tabHeader').html()).focus();
+             $(this).find('a').toggle();
+         });
+
+        $('.tabEdit').on('keydown blur dblclick','input',function(e){
+            if(e.type=="keydown")
+            {
+              if(e.which==13)
+               {
+                   $(this).toggle();
+                   $(this).siblings('a.tabHeader').toggle().html($(this).val());
+               }
+               if(e.which==38 || e.which==40 || e.which==37 || e.which==39 || e.keyCode == 32)
+               {
+                  e.stopPropagation();
+              }
+
+            }
+            else if(e.type=="focusout")
+            {
+                if($(this).css('display')=="inline-block")
+                {
+                    $(this).toggle();
+                    $(this).siblings('a.tabHeader').toggle().html($(this).val());
+                }
+            }
+            else
+            {
+                e.stopPropagation();
+            }
+        });
+    });
+
+    function renameTabs() {
+        var tabs = $( "#tabs" ).tabs();
+        tabs.find( ".ui-tabs-nav" ).sortable({
+               axis: "x",
+               stop: function() {
+                  tabs.tabs( "refresh" );
+              },
+              select: function(event, ui) {
+                  alert("PRESSED TAB!");
+              }
+         });
+
+        $('.tabEdit').off('dblclick');
+        $('.tabEdit').off('keydown blur dblclick');
+
+        $('.tabEdit').on('dblclick',function(){
+            $(this).find('input').toggle().val($(this).find('a.tabHeader').html()).focus();
+            $(this).find('a.tabHeader').toggle();
+        });
+
+       $('.tabEdit').on('keydown blur dblclick','input',function(e){
+           if(e.type=="keydown")
+           {
+             if(e.which==13)
+              {
+                  $(this).toggle();
+                  $(this).siblings('a.tabHeader').toggle().html($(this).val());
+              }
+              if(e.which==38 || e.which==40 || e.which==37 || e.which==39 || e.keyCode == 32)
+              {
+                 e.stopPropagation();
+            }
+
+           }
+           else if(e.type=="focusout")
+           {
+               if($(this).css('display')=="inline-block")
+               {
+                   $(this).toggle();
+                   $(this).siblings('a.tabHeader').toggle().html($(this).val());
+               }
+           }
+
+       });
+   }
+    </script>
+
+    <script>
+        $(function() {
+
+            var groupTitle = $( "#group_title" );
+
+            var dialog = $( "#dialog_2" ).dialog({
+              autoOpen: false,
+              modal: true,
+              buttons: {
+                Add: function() {
+                  addGroup();
+                  $( this ).dialog( "close" );
+                },
+                Cancel: function() {
+                  $( this ).dialog( "close" );
+                }
+              },
+              close: function() {
+                form[ 0 ].reset();
+              }
+            });
+
+            var form = dialog.find( "form" ).submit(function( event ) {
+              addGroup();
+              dialog.dialog( "close" );
+              event.preventDefault();
+            });
+
+            function addGroup() {
+
+                var label = groupTitle.val() || "Group " + getField();
+
+                var group = document.createElement("fieldset");
+                group.setAttribute('class', 'fieldClass');
+
+                var divSection = document.createElement("div");
+                divSection.setAttribute('class', "innerGroup");
+
+                var drop = document.createElement("UL");
+                drop.setAttribute('class', 'sortable');
+
+                var active = $("#tabs .ui-tabs-panel:visible").attr("id");
+
+                var elems = document.getElementById(active).getElementsByTagName("li");
+
+                var moving = new Array();
+
+                for(q = 0; q < elems.length; q++) {
+                    var save = elems[q].parentNode.parentNode.className;
+                    if(save != 'innerGroup') {
+                        var tempElem = elems[q];
+                        tempElem.setAttribute('style', 'margin-left: 0');
+                        moving.push(tempElem);
+                    }
+                }
+
+                var counter = 0;
+                var length = moving.length;
+
+                while(length > counter) {
+                    drop.insertBefore(moving.pop(), drop.firstChild);
+
+                    length--;
+                }
+
+                divSection.appendChild(drop);
+                group.appendChild(divSection);
+
+                var fieldName = "group " + String(getField());
+                addField();
+                group.setAttribute("id", fieldName);
+
+                var legend = document.createElement('legend');
+                legend.innerText = label + " ";
+
+                var a = document.createElement('a');
+                a.setAttribute('href', '#');
+                a.setAttribute('style', 'text-decoration: none; color: red')
+
+                var span = document.createElement('span');
+                span.setAttribute('class', 'groupDel');
+                span.innerText = "x";
+
+                a.addEventListener('click', function(){
+                    $(this).parent().parent().remove();
+                });
+
+                legend.addEventListener('click', function(){
+                    $(this).parent().find('.innerGroup').slideToggle("slow");
+                });
+
+                legend.setAttribute('class', 'groupName');
+
+                a.appendChild(span);
+                legend.appendChild(a);
+                group.appendChild(legend);
+
+                var tabID = String(getSelectedTabId());
+
+                var tabContID = document.getElementById(tabID).children[0].id;
+
+                document.getElementById(tabContID).appendChild(group);
+
+                runSort(active);
+
+                remake();
+            }
+
+            $( "#add_group" ).button().click(function() {
+                dialog.dialog( "open" );
+            });
+
+        });
+
+    function runSort(active) {
+
+        var helperClone = function (event, object) {
+            if (undefined == object) {
+                var helper = $(this).clone(),
+                    height = $(this).height(),
+                    width = $(this).width();
+            } else {
+                var helper = object.clone(),
+                    height = object.height(),
+                    width = object.width();
+            }
+
+            return helper;
+        },
+            sortable = $(".sortable"),
+            draggable = $("#tabs .ui-tabs-panel:visible .base"),
+            dragGroup = $(".fieldClass"),
+            revertCheck = function () {
+                console.log("revertCheck", sortable.find("li").length > 4, sortable.find("li").length);
+            };
+
+        draggable.draggable({
+            connectToSortable: sortable,
+            helper: helperClone,
+            revert: revertCheck
+        });
+
+        dragGroup.draggable({
+            connectToSortable: sortable,
+            helper: helperClone,
+            revert: revertCheck
+        });
+
+        sortable.sortable({
+            placeholder: "ui-state-highlight",
+            receive: function (event, ui) {
+                console.log("receive", $(this).find("li").length < 4, $(this).find("li").length);
+                ui.item.remove();
+
+                var test = $(this).data().uiSortable.currentItem[0].type;
+
+                if(test == 'fieldset') {
+                    $(this).data().uiSortable.currentItem.addClass('acceptable').css({
+                        'width': '94%',
+                        'height': 'auto',
+                        'margin-left': '0'
+                    });
+                } else {
+                    $(this).data().uiSortable.currentItem.addClass('acceptable').css({
+                        'width': '93%',
+                        'height': '40px',
+                        'margin-left': '0'
+                    });
+                }
+
+            },
+            update: function (event, ui) {
+                console.log("update", $(this).find("li").length < 4, $(this).find("li").length);
+                if (!this.reverted) {
+                    //do stuff
+                    console.log("update fired");
+                } else {
+                    this.reverted = false;
+                    console.log("update didn't fire");
+                    ui.item.effect('highlight', {
+                        color: 'red'
+                    });
+                }
+            }
+        });
+
+        /*$(active).droppable({
+            accept: 'li, .fieldClass',
+            over: function (event, ui) {
+                $(this).effect('highlight');
+            },
+            drop: function (event, ui) {
+                var target = $(this).find('ul');
+                var clone = ui.draggable.clone();
+                ui.draggable.remove();
+                clone.appendTo(target).show().removeClass('acceptable').draggable({
+                    connectToSortable: sortable,
+                    helper: helperClone,
+                    revert: revertCheck
+                });
+            }
+        });*/
+        $("ul, li").disableSelection();
+
+    }
+
+    function remake() {
+
+        var helperClone = function (event, object) {
+            if (undefined == object) {
+                var helper = $(this).clone(),
+                    height = $(this).height(),
+                    width = $(this).width();
+            } else {
+                var helper = object.clone(),
+                    height = object.height(),
+                    width = object.width();
+            }
+            return helper;
+            },
+            sortable = $(".sortable"),
+            draggable = $("#tabs .ui-tabs-panel:visible .base"),
+            revertCheck = function () {
+            };
+
+        draggable.draggable({
+            connectToSortable: sortable,
+            helper: helperClone,
+        });
+
+        sortable.sortable({
+            placeholder: "ui-state-highlight",
+            receive: function (event, ui) {
+                ui.item.remove();
+
+                $(this).data().uiSortable.currentItem.addClass('acceptable').css({
+                    'width': '93%',
+                    'height': '40px',
+                    'margin-left': '0'
+            });
+
+            },
+
+        });
+
+    }
+    </script>
+
+</body>
+</html>
