@@ -488,6 +488,10 @@
 
             document.getElementById(tabContID).appendChild(node);
 
+            $(function() {
+                $( ".slideStuff" ).slider();
+            });
+
             var active = $("#tabs .ui-tabs-panel:visible").attr("id");
 
             var test = document.getElementById(active).getElementsByClassName(fieldClass);
@@ -495,10 +499,6 @@
             if(test.length > 0) {
                 remake();
             }
-
-            $(function() {
-                $( ".slideStuff" ).slider();
-            });
         }
 
         function numbers() {
@@ -843,6 +843,10 @@
                 var elemType = element.type;
 
                 var name = String(element.name);
+
+                if(name == 'undefined') {
+                    name = "";
+                }
 
                 var node = cursor.childNodes[3];
 
@@ -1212,11 +1216,15 @@
         '\t\t<Link href="http://support.sas.com/training/studio">SAS Tutorials</Link>\n' +
         "\t  </Links>\n" + "\t<Category>Data</Category>\n" + "</Registration>\n";
 
+        var endTaskString = '  <CodeTemplate>\n' +
+            '\t<![CDATA[\n\n' + 'proc print data=sashelp.cars;run;\n\n' +
+            '\t]]>\n' + '  </CodeTemplate>\n' + '</Task>';
+
         var modal = document.getElementById('myModal');
         var btn = document.getElementById("buttOutput");
         var span = document.getElementsByClassName("close")[0];
 
-        var completeString = regiString + endString + uiString;
+        var completeString = regiString + endString + uiString + endTaskString;
 
         document.getElementById('modalContent').value = completeString;
 
