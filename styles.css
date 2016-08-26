@@ -1,0 +1,602 @@
+.panels {
+    padding:5px 0;
+    width:auto;
+    margin: 0 auto;
+}
+
+.panels div {
+    width:30%;
+    height:800px;
+    //background-color: grey;
+    //float:left;
+    display:inline-block;
+    margin:2px;
+    box-shadow: none;
+    border-radius: 2px;
+    color:#666;
+}
+
+.properties {
+    float:right;
+    vertical-align: middle;
+    margin-top: 5px;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 2px;
+    background-color: #E9ECEB;
+    border-style: solid;
+    border-color: #000000;
+    color: #000000;
+    text-align: center;
+    font-size: 12px;
+    padding: 8px;
+    width: 100px;
+    margin: 5px;
+}
+
+.delete {
+    float:right;
+    vertical-align: middle;
+    margin-top: 5px;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 2px;
+    background-color: #E9ECEB;
+    border-style: solid;
+    border-color: #000000;
+    color: #000000;
+    text-align: center;
+    font-size: 12px;
+    padding: 8px;
+}
+
+.check {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 1px;
+}
+
+.rad {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.txt {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #E9ECEB;
+    width: 200px;
+    font-size: 14px;
+}
+
+.DS {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #E9ECEB;
+    width: 200px;
+    font-size: 14px;
+}
+
+.dropdown {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #E9ECEB;
+    width: 200px;
+    font-size: 14px;
+    line-height: 2;
+}
+
+select:invalid {
+    color: gray;
+}
+
+.lists {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+    background-color: #E9ECEB;
+    width: 200px;
+    font-size: 14px !important;
+    line-height: 2;
+}
+
+.roles {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.slideStuff {
+    height: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.date {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.numbah {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.colors {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.base {
+    border-style: solid;
+    background-color: #48525C;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    color: #EFEFFF;
+}
+
+.ui-draggable-dragging {
+    width: 500px;
+}
+
+.minMax {
+    width: 35px;
+}
+
+.tiedElem {
+    width: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.base:hover {
+    background-color: #A0A0A0;
+}
+
+#list_3{
+    margin-top: 10%;
+}
+
+#list_3 li{
+    font-size: 20px;
+    color: black;
+}
+
+#panel_1 {
+    margin-top: 0;
+    background-image: -webkit-linear-gradient(
+        #13133D 0%, #13133D 11%,
+        #9199A6 11%, #9199A6 22.5%,
+        #E4E4E4 22.5%, #E4E4E4 100%
+    );
+    float:left;
+    clear:left;
+    height: 588px;
+    border: solid;
+    border-width: 1px;
+    border-color: grey;
+}
+
+.headText {
+    background:radial-gradient(#B7B7B7 , #A1A1A1);
+    margin-top: 7px;
+    margin-left: 2px;
+    margin-right: 0;
+    float: left;
+    border: solid;
+    border-width: 1px;
+    border-color: grey;
+    width: 30%;
+    border-radius: 2px;
+}
+
+.container {
+    border: none;
+}
+.tab-content {
+    width: 800px;
+}
+.active {
+    border: none;
+}
+
+#panel_2 {
+    background:radial-gradient(#77d19e , #46c17b);
+    width: 200%;
+    height: 200px;
+}
+
+#panel_3 {
+    background-image: -webkit-linear-gradient(bottom, #E4E4E4 91%, #13133D 9%);
+    position: fixed;
+    right: 9.44%;
+    margin-left: 0;
+    border: solid;
+    border-width: 1px;
+    border-color: grey;
+    height: 799px;
+}
+
+.propLabel{
+    font-weight: bold;
+}
+
+#tabs {
+    float: left;
+    position: fixed;
+    left: 30.2%;
+    background:radial-gradient(#E4E4E4 , #D7D7D7);
+    border: solid;
+    border-width: 1px;
+    border-color: grey;
+    border-top: none;
+}
+
+.button {
+    //background:linear-gradient(to bottom, #E3E2E2, #BFBEBE);
+    background-color: white;
+    text-align: center;
+    border-radius: 12px;
+    border: 2px solid #000000;
+    height:10%;
+}
+
+h2 {
+    font-size: 24px;
+    font-family: Inconsolata;
+    color: #EFEFFF;
+    font-weight: normal;
+    padding-top: 1px;
+    text-align:center;
+    vertical-align: top;
+}
+
+li {
+    margin: 1em 0;
+}
+
+#removeOption {
+    margin: 20px;
+}
+
+#imp{
+    color:red;
+}
+
+#list_1 {
+    font-size: 1.4em;
+    margin: 0;
+    padding: 0;
+}
+
+#list_1 li {
+    display: inline-block;
+    width: 45%;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    vertical-align: top;
+}
+#list_1 li:before {
+    padding: 5px;
+    margin-right: 5px;
+    color: orange;
+    background-color: white;
+    display: inline-block;
+}
+
+.mainButtons {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #E9ECEB;
+  border-style: solid;
+  border-color: #000000;
+  color: #000000;
+  text-align: center;
+  font-size: 18px;
+  padding: 5px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.mainButtons span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.mainButtons span:after {
+ content: '>';
+ position: absolute;
+ opacity: 0;
+ top: 0;
+ right: -15px;
+ transition: 0.5s;
+}
+
+.mainButtons:hover span {
+    padding-right: 25px;
+}
+
+.mainButtons:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.output {
+    width: 500px;
+    margin-left: 35.94px;
+    margin-top: 15%;
+    height: 30px;
+    background-color: #13133D;
+    font-family: Inconsolata;
+    font-size: 17px;
+    color: #EFEFFF;
+    border: solid 1px grey;
+}
+
+.outTextBox {
+    display: inline-block;
+    vertical-align: middle;
+    resize: none;
+}
+
+.ui-datepicker-calendar {
+    background-color: #9e9e9e;
+    color: black;
+}
+
+.ui-datepicker-calendar a{
+    color: white;
+    text-decoration: none;
+}
+
+.ui-datepicker-header {
+    color: white !important;
+    background-color: #13133D !important;
+    border: none !important;
+}
+
+.ui-datepicker-next {
+    float: right;
+    margin-right: 2px;
+}
+
+.ui-datepicker-title {
+    text-align: center !important;
+}
+
+.titles{
+    padding: 2px;
+}
+
+#nameTitle{
+    border-radius: 2px;
+    background-color: #F5F5F5;
+}
+
+#procTitle{
+    width: 90%;
+    height: 50px;
+    border-radius: 2px;
+    background-color: #F5F5F5;
+}
+#descTitle{
+    width: 90%;
+    height: 50px;
+    border-radius: 2px;
+    background-color: #F5F5F5;
+}
+
+/*#titleStuff{
+    padding: 0;
+    padding-left: 3%;
+    display: inline-block;
+    vertical-align: middle;
+}*/
+/*
+#titleStuff li{
+    display: inline;
+    text-align: top;
+}*/
+
+/*Modal CSS*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    resize:both;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 3px solid #000000;
+    width: 80%;
+    height: 40%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalContent {
+    width: 70%;
+    height: 39%;
+    resize: none;
+    position: fixed;
+    border: none;
+}
+#modalContent:focus {
+    outline: none !important;
+}
+
+.ui-widget-header {
+   background:white;
+   border: 1px solid #E6E6E6;
+   border-top: none;
+   color: #FFFFFF;
+   font-weight: bold;
+}
+
+.ui-dialog-titlebar{
+    background: none;
+    border: none;
+}
+.ui-dialog-titlebar button{
+    margin-right: 5px;
+    position: fixed;
+    margin-left: 180px;
+}
+
+.ui-dialog-content{
+    min-height: 0;
+}
+
+.ui-dialog{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    background: grey;
+}
+
+#dialog{
+    min-height: 0;
+}
+
+.ui-tabs .ui-tabs-hide {
+    display: none;
+}
+
+#tabs .ui-tabs-nav {
+    margin: 0;
+    padding: 0 0 0 0.5em;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+#tabs .ui-tabs-nav li {
+    float: left;
+    list-style-type: none;
+    border: 1px solid grey;
+    border-bottom: none;
+    background-color: #13133D;
+    margin: 0 0.5em 0 0;
+    padding: 0.25em 1em;
+    text-decoration: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.tab-stuff {
+    width: 98%;
+    height: 95%;
+}
+
+.tabContent {
+    list-style: none;
+    padding-left: 0;
+}
+
+.tabHeader {
+    text-decoration: none;
+    color: #EFEFFF;
+}
+
+#dialog label, #dialog input { display: block; }
+  #dialog label { margin-top: 0.5em; }
+  #dialog input, #dialog textarea { width: 95%; }
+
+#add_tab {
+    background: transparent;
+    border: none !important;
+    cursor: pointer;
+    color: #EFEFFF;
+}
+
+#tabs li .ui-icon-close { float: left; margin: 0.4em 0.2em 0 0; cursor: pointer; }
+
+.removeX {
+    text-decoration: none;
+    color: red;
+    cursor: pointer;
+}
+
+#dialog_2 label, #dialog_2 input { display:block; }
+#dialog_2 label { margin-top: 0.5em; }
+#dialog_2 input, #dialog_2 textarea { width: 95%; }
+
+.fieldClass {
+    height: auto;
+    width: fill;
+    list-style: none;
+    padding-left: 0;
+    padding-top: 0;
+}
+
+.sortable {
+    list-style: none;
+    padding-left: 2%;
+    border: none;
+    min-height: 50px;
+}
+
+div.innerGroup {
+    width: 100%;
+    height: 85%;
+    border: none;
+    box-shadow: none;
+    overflow: auto;
+}
+
+.txtTab {
+    display:none;width:120px;
+}
+
+/*the slider background*/
+.slideStuff {
+    width:230px;
+    height: 10px !important;
+    background: #737373;
+    position:relative;
+    margin:0;
+    padding:0 10px;
+    margin: 15px !important;
+}
+
+
+/*Style for the slider button*/
+.ui-slider-handle {
+    width:16px;
+    height:16px;
+    position:absolute;
+    top:-3px;
+    margin-left:-12px;
+    z-index:200;
+    background:#DEDEDE;
+    outline:none;
+}
