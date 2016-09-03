@@ -1,7 +1,7 @@
 # Task Builder
 Builds tasks for SAS Studio: http://www.sas.com/en_us/software/foundation/studio.html
 
-Important: Please run in Chrome. The other browsers are not currently supported, but it is something I am working on.
+<b>Important</b>: Please run in Chrome. The other browsers are not currently supported, but it is something I am working on.
 
 I am a college student, and created this Task Builder as a project over the summer. It is in no way complete or bug-free. 
 
@@ -11,3 +11,8 @@ The purpose of this program is to allow the user to construct tasks to be used i
 http://www.sas.com/en_us/software/university-edition.html
   
 The end result of this program is XML text. More specifically, CTM, or Common Task Model. This generated code can be copy-pasted into SAS Studio, which in turn can be run within SAS Studio instantly.
+
+To begin:
+
+1. Download the two files into a directory.
+2. Click on the TaskBuilder.html file to get started.
