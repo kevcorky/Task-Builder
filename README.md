@@ -1,6 +1,5 @@
 # Task Builder
-Builds tasks for SAS Studio
-SAS Studio:  http://www.sas.com/en_us/software/foundation/studio.html
+Builds tasks for SAS Studio: http://www.sas.com/en_us/software/foundation/studio.html
 
 Important: Please run in Chrome. The other browsers are not currently supported, but it is something I am working on.
 
