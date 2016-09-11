@@ -39,4 +39,4 @@ Inside the Sas Studio blank task, press Ctrl-A to select all the text, then Ctrl
  
 Run!
 
-The generated task should look, more or less, exactly like how it appeared in the Task Builder.
+The generated task should look, apart from the graphical differences, exactly like how it appeared in the Task Builder.
