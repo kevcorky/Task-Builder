@@ -12,12 +12,12 @@ http://www.sas.com/en_us/software/university-edition.html
   
 SAS Studio tasks are point and click interfaces which automatically generate SAS code.  Tasks are written in XML.  More specifically, CTM, or Common Task Model.  This generated code can be copy/pasted into SAS Studio, which in turn can be run within SAS Studio instantly.  More information on the common task model can be found here:  http://support.sas.com/documentation/cdl/en/webeditordg/68829/HTML/default/viewer.htm#titlepage.htm
 
-To begin:
+<b>To begin:</b>
 
 1. Download the two files into a directory.
 2. Click on the TaskBuilder.html file to get started.
 
-<u>Quick step-by-step tutorial of building a simple task:</u>
+<b>Quick step-by-step tutorial of building a simple task:</b>
 
 Click TaskBuilder.html to start the program.
 
