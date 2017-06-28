@@ -14,7 +14,7 @@ SAS Studio tasks are point and click interfaces which automatically generate SAS
 
 <b>To begin:</b>
 
-1. Download the two files into a directory.
+1. Download the files into a directory.
 2. Click on the TaskBuilder.html file to get started.
 
 <b>Quick step-by-step tutorial of building a simple task:</b>
